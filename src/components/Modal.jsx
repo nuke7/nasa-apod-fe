@@ -45,7 +45,11 @@ export const Modal = (props) => {
           />
         </DialogContent>
         <DialogActions>
-          <Button onClick={() => props.setOpen()} color="secondary" autoFocus>
+          <Button
+            onClick={() => props.setOpen()}
+            color="secondary"
+            variant="outlined"
+            autoFocus>
             Close
           </Button>
         </DialogActions>
