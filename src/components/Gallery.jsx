@@ -39,7 +39,7 @@ export const Gallery = (props) => {
     setOpen(true);
   };
 
-  return gallery.lenght !== 0 ? (
+  return gallery.length !== 0 ? (
     <div
       style={{
         display: "flex",
@@ -48,11 +48,15 @@ export const Gallery = (props) => {
 
         width: "100%",
         margin: "auto",
-      }}>
+      }}
+    >
       {gallery.map((item, index) => {
         return (
           <Zoom key={index}>
-            <Card className={classes.root} variant="outlined">
+            <Card
+              className={classes.root}
+              variant="outlined"
+            >
               <CardActionArea onClick={() => window.open(`${item.hdurl}`, "_blank")}>
                 <CardMedia
                   component="img"
@@ -62,7 +66,11 @@ export const Gallery = (props) => {
                   title={item.title}
                 />
                 <CardContent>
-                  <Typography gutterBottom variant="h5" component="h2">
+                  <Typography
+                    gutterBottom
+                    variant="h5"
+                    component="h2"
+                  >
                     {item.title}
                   </Typography>
                 </CardContent>
@@ -75,7 +83,8 @@ export const Gallery = (props) => {
                   onClick={(e) => {
                     handleClickOpen();
                     setstateID(e.currentTarget.id);
-                  }}>
+                  }}
+                >
                   Learn More
                 </Button>
                 <Button
@@ -98,11 +107,16 @@ export const Gallery = (props) => {
                       })
                     );
                     console.log(gallery);
-                  }}>
+                  }}
+                >
                   Remove
                 </Button>
               </CardActions>
-              <Modal open={open} id={stateID} setOpen={() => setOpen(!open)} />
+              <Modal
+                open={open}
+                id={stateID}
+                setOpen={() => setOpen(!open)}
+              />
             </Card>
           </Zoom>
         );
